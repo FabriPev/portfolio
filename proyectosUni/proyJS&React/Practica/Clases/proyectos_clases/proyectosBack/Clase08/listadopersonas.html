@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script>
+        function cargar_personas() {
+            fetch('./personas.json')
+            .then((response) => response.json())
+            .then(personas =>
+            {const listado = document.getElementById('listado');
+            // for (const cada of personas){alert(JSON.stringify(cada))}})
+            //.then((data) => {alert(data.length)})
+            //listado.innerHTML = "<h2>Listado de Personas</h2>";
+            let texto = "<h2> Listado de Personas </h2>";
+            texto += "<table>";
+
+            
+            for (const cada of personas){
+                //listado.innerHTML += JSON.stringify(cada);
+                //listado.innerHTML += cada.nombre + " " + cada.apellido + " " + cada.edad + "<br>";
+                texto += "<tr>";
+                texto += `<td>${cada.nombre}</td>`;
+                texto += `<td>${cada.apellido}</td>`;
+                texto += `<td>${cada.edad}</td>`;
+                
+                texto += "</tr>";
+                
+            }
+            texto += "</table>";
+            listado.innerHTML += texto;
+            })
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Listado de Personas </h1>
+    <div>
+        <button onclick="cargar_personas()">Carga de Personas</button>
+    </div>
+    <div id="listado">
+
+    </div>
+</body>

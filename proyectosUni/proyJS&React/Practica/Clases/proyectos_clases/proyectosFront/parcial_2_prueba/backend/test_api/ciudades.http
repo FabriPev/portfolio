@@ -1,0 +1,42 @@
+@port = 3200
+
+### Válida
+GET http://localhost:{{port}}/api/ciudades
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJycmFtaXJleiIsImVtYWlsIjoicnJhbWlyZXpAbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDI1LTA1LTIyVDAwOjI1OjU5LjExMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTA1LTIyVDAwOjI1OjU5LjExMFoiLCJpYXQiOjE3NDc4NzUyNTF9.i-NHsa8cXeTuRjB_zUDV9to18oB-oOer49hSc_qv7iY
+
+### No valida
+GET http://localhost:{{port}}/api/ciudades
+Authorization: Bearer eyJsasashbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJycmFtaXJleiIsImVtYWlsIjoicnJhbWlyZXpAbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDI1LTA1LTIyVDAwOjI1OjU5LjExMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTA1LTIyVDAwOjI1OjU5LjExMFoiLCJpYXQiOjE3NDc4NzUyNTF9.i-NHsa8cXeTuRjB_zUDV9to18oB-oOer49hSc_qv7iY
+
+### No válida
+GET http://localhost:{{port}}/api/ciudades
+
+
+###
+GET http://localhost:{{port}}/api/ciudades?nombre=chi&provincia=ri&orden=poblacion
+###
+GET http://localhost:{{port}}/api/ciudades?nombre=chi&orden=provincia
+###
+GET http://localhost:{{port}}/api/ciudades?orden=nombre
+###
+GET http://localhost:{{port}}/api/ciudades/40
+###
+POST http://localhost:{{port}}/api/ciudades
+Content-Type: application/json
+
+{
+    "nombre":"Ciudad 1",
+    "provincia": "Provincia 1",
+    "poblacion": 2000
+}
+###
+PUT http://localhost:{{port}}/api/ciudades/40
+Content-Type: application/json
+
+{
+    "poblacion":50000
+}
+
+###
+DELETE http://localhost:{{port}}/api/ciudades/40
+

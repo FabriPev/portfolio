@@ -1,0 +1,31 @@
+@port = 3000
+###
+GET http://localhost:{{port}}/api/pacientes/
+###
+GET http://localhost:{{port}}/api/pacientes?Propietario=Ana
+###
+GET http://localhost:{{port}}/api/pacientes/2
+###
+POST http://localhost:{{port}}/api/pacientes
+Content-Type: application/json
+
+    {
+        "Nombre": "Laura",
+        "Propietario": "Daniel",
+        "Telefono": "156564423"
+    }
+###
+PUT http://localhost:{{port}}/api/pacientes/3
+Content-Type: application/json
+
+{
+  "Nombre": "Juan Pérez",
+  "Propietario": "Ana",
+  "Telefono": "123-456-7890"
+}
+
+###
+DELETE http://localhost:{{port}}/api/pacientes/1
+
+
+

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="adjunto.css">
+    </head>
+    <body>
+        <h1 class="verde">Formulario de contacto</h1>
+        <form action="">
+            <div>
+                <label for="txtNombre">Nombre:</label> <input type="text" name="txtNombre" id="txtNombre">   
+            </div>
+           <div>
+               Apellido: <input type="text" name="txtApellido" id="txtApellido">
+           </div>
+           <div class="destacado">
+                Tipo de contacto:
+                <input type="radio" name="opcTipo" id="Consulta" value="Consulta"> <label for="Consulta">Consulta</label>
+                <input type="radio" name="opcTipo" id="Reclamo" value="Reclamo"> <label for="Reclamo">Reclamo</label>
+                <input  type="radio" name="opcTipo" id="Otro" value="Otro"> <label class="destacado" for="Otro">Otro</label>
+           </div>
+            <div>
+                Ingrese su  <span class="destacado">consulta</span>:
+                <textarea class="verde" name="" id="" cols="40" rows="10"></textarea>
+            </div>
+            <div>
+                <button class="verde destacado" type="submit">Enviar</button>
+            </div>
+
+
+        </form>
+    </body>
+</html>

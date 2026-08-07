@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Películas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container mt-5">
+    <h1 class="mb-4">Gestión de Películas</h1>
+
+    <!-- Filtro por año -->
+    <div class="mb-3">
+      <label for="anioFiltro" class="form-label">Filtrar por Año de Estreno:</label>
+      <input type="number" id="anioFiltro" class="form-control" placeholder="Ej. 2020">
+      <!-- Filtro por título-->
+      <label for="tituloFiltro" class="form-label">Filtrar por Titulo:</label>
+      <input type="text" id="tituloFiltro" class="form-control" placeholder="Ej. The Avengers">
+      <!-- Filtro por género -->
+      <label for="generoFiltro" class="form-label">Filtro de Genero</label>
+      <select id="generoFiltro" class="form-select">
+        <option value="">Todos</option>
+        <option value="Accion">Acción</option>
+        <option value="Comedia">Comedia</option>
+        <option value="Drama">Drama</option>
+        <option value="Terror">Terror</option>
+        <option value="Suspenso">Suspenso</option>
+        <!-- Puedes agregar más géneros -->
+      </select>
+      <button class="btn btn-primary mt-2" id="btnFiltrar">Filtrar</button>
+
+    </div>
+    <!-- Tabla de películas -->
+    <table class="table table-striped" id="tablaPeliculas">
+      <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Director</th>
+            <th>Año</th>
+            <th>Género</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Películas se insertarán aquí con JavaScript -->
+      </tbody>
+    </table>
+
+    <!-- Formulario para agregar nueva película -->
+    <h2 class="mt-5">Agregar Nueva Película</h2>
+    <form id="formPelicula">
+      <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input type="text" id="titulo" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="director" class="form-label">Director</label>
+        <input type="text" id="director" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="anio" class="form-label">Año de Estreno</label>
+        <input type="number" id="anio" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="genero" class="form-label">Género</label>
+        <input type="text" id="genero" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-success" id="agregarPelicula">Agregar Película</button>
+    </form>
+
+    <!-- Formulario para modificar el año de una película -->
+
+    <div>
+      <h2 class="mt-5">Modificar Año de una Película</h2>
+      <form id="formActualizarAnio">
+        <div class="mb-3">
+          <label for="idPelicula" class="form-label">ID de la Película</label>
+          <input type="number" id="idPeliculaActualizar" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="nuevoAnio" class="form-label">Nuevo Año de Estreno</label>
+          <input type="number" id="nuevoAnio" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-warning">Modificar Año</button>
+      </form>
+    </div>
+    <div class="mt-5">
+      <div class="col-md-6">
+        <h2 class="text-center mb-4">Eliminar Película</h2>
+        <form id="formEliminarPelicula" class="border p-4 rounded shadow-sm bg-white">
+          <div class="mb-3">
+            <label for="idPeliculaEliminar" class="form-label">ID de la Película a eliminar</label>
+            <input type="number" id="idPeliculaEliminar" class="form-control" required>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-danger">Eliminar Película</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  </div>   
+  <script src="./js/main2.js"></script>
+
+</body>
+</html>

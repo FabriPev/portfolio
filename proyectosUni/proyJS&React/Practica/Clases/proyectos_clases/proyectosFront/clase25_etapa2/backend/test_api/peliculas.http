@@ -1,0 +1,43 @@
+@port = 3200
+
+### Válida
+GET http://localhost:{{port}}/api/peliculas
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJycmFtaXJleiIsImVtYWlsIjoicnJhbWlyZXpAbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDI1LTA1LTIyVDAwOjI1OjU5LjExMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTA1LTIyVDAwOjI1OjU5LjExMFoiLCJpYXQiOjE3NDc4NzUyNTF9.i-NHsa8cXeTuRjB_zUDV9to18oB-oOer49hSc_qv7iY
+
+### No valida
+GET http://localhost:{{port}}/api/peliculas
+Authorization: Bearer eyJsasashbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJycmFtaXJleiIsImVtYWlsIjoicnJhbWlyZXpAbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDI1LTA1LTIyVDAwOjI1OjU5LjExMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTA1LTIyVDAwOjI1OjU5LjExMFoiLCJpYXQiOjE3NDc4NzUyNTF9.i-NHsa8cXeTuRjB_zUDV9to18oB-oOer49hSc_qv7iY
+
+### No válida
+GET http://localhost:{{port}}/api/peliculas
+
+
+###
+GET http://localhost:{{port}}/api/peliculas?titulo=co&director=ad&orden=anio
+###
+GET http://localhost:{{port}}/api/peliculas?titulo=co&orden=titulo
+###
+GET http://localhost:{{port}}/api/peliculas?orden=director
+###
+GET http://localhost:{{port}}/api/peliculas/40
+###
+POST http://localhost:{{port}}/api/peliculas
+Content-Type: application/json
+
+{
+    "titulo":"Pelicula 1",
+    "director": "Director 1",
+    "anio": "2020",
+    "genero": "Drama"
+}
+###
+PUT http://localhost:{{port}}/api/peliculas/40
+Content-Type: application/json
+
+{
+    "anio":2021
+}
+
+###
+DELETE http://localhost:{{port}}/api/peliculas/40
+

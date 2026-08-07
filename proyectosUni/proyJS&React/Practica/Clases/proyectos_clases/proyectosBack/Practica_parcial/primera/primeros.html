@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Practica</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+<body>
+    <header>
+        <h1>Bienvenido</h1>
+    </header>
+    <main>
+        <h2>Cuestionario del usario</h2>
+        <form action="" id="Cuestioanrio">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+            <input type="text" name="apellido" id="apellido" placeholder="Apellido" required> 
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="resultado"></div>
+        <script>
+            document.getElementById('Cuestioanrio').addEventListener('submit', function(event) {
+                event.preventDefault(); // Evita el envío del formulario
+                
+                const nombre = document.getElementById('nombre').value;
+                const apellido = document.getElementById('apellido').value;
+                
+                // Aquí puedes hacer lo que necesites con los datos, como enviarlos a un servidor o mostrarlos en la página
+                const resultadoDiv = document.getElementById('resultado');
+                resultadoDiv.innerHTML = `<h3>Hola ${nombre} ${apellido}</h3>`;
+            });
+        </script>
+    
+    </main>
+    <footer>
+        <p>Derechos reservados &copy; 2023</p>
+    </footer>
+</body>
+</html>
