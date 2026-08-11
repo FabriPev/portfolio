@@ -1,2 +1,2 @@
 # portfolio
-proyectos personales y practicas de universidad 
+Proyectos de practicas de universidad de varios años divido de acuerdo a lenguaje y frameworks distintos 
